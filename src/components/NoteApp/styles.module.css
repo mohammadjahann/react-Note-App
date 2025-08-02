@@ -1,0 +1,96 @@
+.noteAppContainer {
+    width: 100%;
+    max-width: 900px;
+    background-color: #f2f2f2;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.noteINputContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.noteInput {
+    width: 100%;
+    max-width: 500px;
+    height: 40px;
+    border: 1px solid #ccc;
+    outline: none;
+    border-radius: 8px;
+    padding: 0 15px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+.noteInput:focus {
+    border-color: #888;
+    box-shadow: 0 0 5px rgba(136, 136, 136, 0.3);
+}
+
+.inputOptions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 10px;
+}
+
+.colorsContainer {
+    display: flex;
+    gap: 10px;
+}
+
+.green {
+    background-color: #d0f5a9;
+}
+
+.yellow {
+    background-color: #fffab0;
+}
+
+.blue {
+    background-color: #b0c7ff;
+}
+
+.white {
+    background-color: #ffffff;
+}
+
+.clorDiv {
+    border: 2px solid #444;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.clorDiv:hover {
+    transform: scale(1.1);
+}
+
+button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #6a5acd;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #5941c4;
+}
