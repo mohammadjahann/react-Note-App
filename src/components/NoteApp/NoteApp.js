@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from './styles.module.css'
 import NoteInput from './NoteInput'
+import RenderNote from './RenderNote'
 
 export default class NoteApp extends Component {
     constructor(props){
@@ -11,8 +12,6 @@ export default class NoteApp extends Component {
         
         this.addNoteHandler = this.addNoteHandler.bind(this)
     }
-
-
     addNoteHandler(value ,color){
         console.log(value , color);
         let updateNotes = this.state.notes
@@ -27,13 +26,16 @@ export default class NoteApp extends Component {
         })
         
     }
-
-    
   render() {
     return (
       <div className={styles.noteAppContainer}>
         <h1>Note App</h1>
         <NoteInput addNoteHandler={this.addNoteHandler}/>
+        <div className={styles.noteContainer}>
+            {this.state.notes.length > 0 && this.state.notes.map(note=>{
+                return <RenderNote key={note.id} {...note}/>
+                })}
+        </div>
       </div>
     );
   }
