@@ -28,10 +28,12 @@ export default class NoteInput extends Component {
     }
 
     addNoteBtn(){
-        this.props.addNoteHandler(this.state.inpuValue , this.state.choosedColer)
-        this.setState({
-            inpuValue : ''
-        })
+        if(this.state.inpuValue.length > 0) {
+            this.props.addNoteHandler(this.state.inpuValue , this.state.choosedColer)
+            this.setState({
+                inpuValue : ''
+            })
+        }
         
     }
 

@@ -11,21 +11,32 @@ export default class NoteApp extends Component {
         }
         
         this.addNoteHandler = this.addNoteHandler.bind(this)
+        this.deletenoteHandler = this.deletenoteHandler.bind(this)
     }
+
     addNoteHandler(value ,color){
-        console.log(value , color);
         let updateNotes = this.state.notes
         let newNoteObj = {
-            id : this.state.notes.length ,
+            id : Date.now() ,
             note : value ,
             backGround : color
         }
         updateNotes.push(newNoteObj)
         this.setState({
             notes : updateNotes
-        })
-        
+        })  
     }
+
+    deletenoteHandler(id){
+      console.log(id);
+      this.setState(prevState=>{
+        return {notes : prevState.notes.filter(note=>{
+          return note.id !== id
+        })}
+      })
+      
+    }
+
   render() {
     return (
       <div className={styles.noteAppContainer}>
@@ -33,7 +44,7 @@ export default class NoteApp extends Component {
         <NoteInput addNoteHandler={this.addNoteHandler}/>
         <div className={styles.noteContainer}>
             {this.state.notes.length > 0 && this.state.notes.map(note=>{
-                return <RenderNote key={note.id} {...note}/>
+                return <RenderNote key={note.id} {...note} deletenoteHandler={this.deletenoteHandler}/>
                 })}
         </div>
       </div>
